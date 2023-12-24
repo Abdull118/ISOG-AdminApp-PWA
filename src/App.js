@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import axios from 'axios';
 
 function App() {
   const [fajr, setFajr] = useState('');
@@ -9,7 +10,8 @@ function App() {
   const [isha, setIsha] = useState('');
   const [isPrayersSaved, setIsPrayersSaved] = useState(false);
 
-  const handleSavePrayers = () => {
+  const handleSavePrayers = (e) => {
+    e.preventDefault();
     // Create the request body
     const prayerData = {
       fajr,
@@ -18,17 +20,11 @@ function App() {
       maghrib,
       isha,
     };
-
-    // Make the POST request to your server
-    fetch('https://sparkling-jade-cowboy-boots.cyclic.app/savePrayers', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(prayerData),
-    })
+  
+    // Make the POST request to your server using Axios
+    axios.post('https://sparkling-jade-cowboy-boots.cyclic.app/savePrayers', prayerData)
       .then((response) => {
-        if (response.ok) {
+        if (response.status === 200) {
           // Prayer data saved successfully
           console.log('Prayer data saved!');
           // Reset the form
