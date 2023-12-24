@@ -1,38 +1,86 @@
-.App {
+.container {
+  background-color: #007FFF;
+  align-items: center;
+  height: 100%;
+}
+
+.start {
+  font-family: 'Arabic', sans-serif;
+  font-size: 36px;
+  text-align: right;
+  margin-top: 15%;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.prayerTitle {
+  color: white;
+  font-size: 25px;
+  margin-top: 20%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.prayerInput {
+  width: 300px;
+  color: #007FFF;
+  background-color: white;
+  height: 50px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button {
+  background-color: #006;
+  border-radius: 5px;
+  padding: 10px 20px;
+ 
+  width: 300px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.button2 {
+  background-color: #002FFF;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 50px;
+  width: 200px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.confirmationContainer {
+  height: 300px;
+  width: 300px;
+  background-color: green;
+  position: absolute;
+  top: 25%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.confirmationText {
+  color: white;
+  font-size: 36px;
+}
+
+.scrollContainer {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
