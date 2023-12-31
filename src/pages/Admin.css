@@ -1,0 +1,67 @@
+.announcements{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: white;
+
+}
+
+.announcements button{
+    height: min-content;
+    width: auto;
+    padding: 5px;
+}
+
+.announcementsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    padding-top: 60px;
+    font-size: 20px;
+
+}
+
+.announcementsContainer>div:first-child{
+    border: 1px solid lightgray;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+    background-color: white;
+}
+
+form textarea{
+    width: 90vw;
+    height: 100px;
+
+}
+
+form{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+button{
+    border: 0;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #006;
+    transition: background-color 0.3s ease;
+    color: white;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #CDAC2F;
+    border-bottom: 0px !important;
+}
+
+form button{
+    width: auto;
+    height: min-content;
+}
