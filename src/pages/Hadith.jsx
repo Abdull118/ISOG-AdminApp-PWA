@@ -22,7 +22,7 @@ const Hadith = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ hadiths: [...hadiths, newHadiths] }), // Update the body according to your server's expected format
+                body: JSON.stringify({ hadith: [...hadiths, newHadiths] }), // Update the body according to your server's expected format
             })
 
             if (!response.ok) {
