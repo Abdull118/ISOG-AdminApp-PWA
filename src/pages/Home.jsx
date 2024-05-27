@@ -23,7 +23,7 @@ const Home = () => {
       };
     
       // Make the POST request to your server using Axios
-      axios.post('https://sparkling-jade-cowboy-boots.cyclic.app/savePrayers', prayerData)
+      axios.post('https://isog-prayer-times-server.onrender.com/savePrayers', prayerData)
         .then((response) => {
           if (response.status === 200) {
             // Prayer data saved successfully

@@ -6,7 +6,7 @@ const Admin = () => {
     
     const getAnnouncements = async() =>{
         try{
-            const response = await fetch('https://sparkling-jade-cowboy-boots.cyclic.app/announcements')
+            const response = await fetch('https://isog-prayer-times-server.onrender.com/announcements')
             const data = await response.json()
             setAnnouncements(data.annoucements)
         }catch(error){
@@ -17,7 +17,7 @@ const Admin = () => {
     const saveAnnouncement = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://sparkling-jade-cowboy-boots.cyclic.app/postAnnouncements', {
+            const response = await fetch('https://isog-prayer-times-server.onrender.com/postAnnouncements', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Admin = () => {
 
     const deleteAnnouncement = async (index) => {
         try {
-            const response = await fetch(`https://sparkling-jade-cowboy-boots.cyclic.app/announcement/${index}`, {
+            const response = await fetch(`https://isog-prayer-times-server.onrender.com/announcement/${index}`, {
                 method: 'DELETE',
             })
 
