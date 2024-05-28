@@ -6,7 +6,7 @@ const Hadith = () => {
     
     const getHadiths = async() =>{
         try{
-            const response = await fetch('https://isog-prayer-times-server.onrender.com/hadiths')
+            const response = await fetch('https://isog-prayer-times-server.vercel.app/api/hadiths')
             const data = await response.json()
             setHadiths(data.hadith)
         }catch(error){
@@ -17,7 +17,7 @@ const Hadith = () => {
     const saveHadith = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://isog-prayer-times-server.onrender.com/postHadith', {
+            const response = await fetch('https://isog-prayer-times-server.vercel.app/api/postHadith', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Hadith = () => {
 
     const deleteHadith = async (index) => {
         try {
-            const response = await fetch(`https://isog-prayer-times-server.onrender.com/hadith/${index}`, {
+            const response = await fetch(`https://isog-prayer-times-server.vercel.app/api/hadith/${index}`, {
                 method: 'DELETE',
             })
 
