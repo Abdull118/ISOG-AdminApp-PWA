@@ -10,11 +10,7 @@ function App() {
 
   return (
     <>
-      <div className='tabs'>
-        <a href='/'><button>Prayer Tab</button></a>
-        <a href='/admin'><button>Announcement Tab</button></a>
-        <a href='/hadith'><button>Hadith Tab</button></a>
-      </div>
+      
     <Router>
         <Routes>
           <Route path='/' element={<Home />}/>
@@ -22,7 +18,11 @@ function App() {
           <Route path='/hadith' element={<Hadith />}/>
         </Routes>
       </Router>
-
+      <div className='tabs'>
+        <a href='/'><button>Prayer Tab</button></a>
+        <a href='/admin'><button>Announcement Tab</button></a>
+        <a href='/hadith'><button>Hadith Tab</button></a>
+      </div>
       
       </>
   );

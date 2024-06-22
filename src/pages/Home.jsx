@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../App.css'
 import { useState } from 'react';
 import axios from 'axios';
@@ -10,7 +10,23 @@ const Home = () => {
     const [maghrib, setMaghrib] = useState('');
     const [isha, setIsha] = useState('');
     const [isPrayersSaved, setIsPrayersSaved] = useState(false);
-  
+
+    const getPrayerTimes = async () => {
+      try {
+        const response = await fetch(
+          `https://isog-prayer-times-server.vercel.app/api/prayers`
+        );
+        const json = await response.json();
+        setFajr(json.fajr);
+        setDhuhr(json.dhuhr);
+        setAsr(json.asr);
+        setMaghrib(json.maghrib);
+        setIsha(json.isha);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
     const handleSavePrayers = (e) => {
       e.preventDefault();
       // Create the request body
@@ -29,11 +45,11 @@ const Home = () => {
             // Prayer data saved successfully
             console.log('Prayer data saved!');
             // Reset the form
-            setFajr('');
-            setDhuhr('');
-            setAsr('');
-            setMaghrib('');
-            setIsha('');
+            // setFajr('');
+            // setDhuhr('');
+            // setAsr('');
+            // setMaghrib('');
+            // setIsha('');
             setIsPrayersSaved(true);
           } else {
             console.log('Failed to save prayer data.');
@@ -43,6 +59,10 @@ const Home = () => {
           console.log('Error occurred while saving prayer data:', error);
         });
     };
+
+    useEffect(()=>{
+      getPrayerTimes()
+    }, [])
 
   return (
     <div className="container">

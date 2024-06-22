@@ -3,13 +3,32 @@
     gap: 20px;
     align-items: center;
     color: white;
+    padding: 20px;
+    border: solid 1px white;
+    margin: 0 10px;
+}
 
+.header{
+    color: #FFF;
+    text-align: center;
+}
+
+.selector{
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 100px;
+    background-color: #006;
+    color: #FFF;
+    border: 0;
+    text-align: center;
 }
 
 .announcements button{
     height: min-content;
     width: auto;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 100%;
 }
 
 .announcementsContainer{
@@ -17,17 +36,20 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 30px;
+    gap: 20px;
     padding-top: 60px;
     font-size: 20px;
+    height: 110vh;
 
 }
 
-.announcementsContainer>div:first-child{
-    border: 1px solid lightgray;
+.announcementsContainer>div:first-child, .header{
+    border: 4px solid white;
+    border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0,0,0,.2);
-    background-color: white;
+    background-color: #006;
+    color: #FFF;
 }
 
 form textarea{
@@ -64,4 +86,9 @@ button:hover{
 form button{
     width: auto;
     height: min-content;
+}
+
+.inputFieldHadithNumber{
+    font-size: 20px;
+    width: 150px;
 }
