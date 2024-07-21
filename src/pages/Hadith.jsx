@@ -24,7 +24,7 @@ const Hadith = () => {
             const response = await fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${hadithBook}/${hadithNumber}.json`);
             const data = await response.json();
             console.log(data.hadiths[0].text)
-            setNewHadiths(data.hadiths[0].text + " " + data.metadata.name + " " + data.hadiths[0].hadithnumber)
+            setNewHadiths(data.hadiths[0].text + " -(" + data.metadata.name + " " + data.hadiths[0].hadithnumber + ")")
         } catch (error) {
             console.log(error);
         }
