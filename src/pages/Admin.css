@@ -1,94 +1,179 @@
-.announcements{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    color: white;
+.adminPage {
+  display: flex;
+  justify-content: center;
+}
+
+.adminShell {
+  width: min(760px, 100%);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 241, 226, 0.9) 100%);
+  border: 1px solid rgba(182, 168, 144, 0.58);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--card-shadow);
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  animation: panelRise 0.28s ease-out both;
+}
+
+.adminHeader {
+  display: grid;
+  gap: 4px;
+}
+
+.adminTitle {
+  margin: 0;
+  font-size: clamp(1.6rem, 4.9vw, 2.05rem);
+  color: var(--emerald-900);
+  font-family: 'Marcellus', serif;
+}
+
+.adminSubtitle {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 0.93rem;
+}
+
+.entryList {
+  display: grid;
+  gap: 10px;
+  max-height: 44vh;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.entryCard {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 10px;
+  color: var(--olive-text);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  border: 1px solid rgba(182, 168, 144, 0.44);
+  border-left: 4px solid var(--emerald-700);
+  padding: 12px 10px 12px 12px;
+}
+
+.entryText {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.46;
+  overflow-wrap: anywhere;
+}
+
+.iconButton {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(160deg, #cf5656 0%, #a52a2a 100%);
+  font-size: 0.78rem;
+}
+
+.adminForm {
+  display: grid;
+  gap: 10px;
+}
+
+.adminTextarea {
+  width: 100%;
+  min-height: 122px;
+  border-radius: 12px;
+  border: 1px solid rgba(107, 127, 111, 0.33);
+  padding: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--olive-text);
+  outline: none;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.adminTextarea:focus-visible,
+.selector:focus-visible,
+.inputFieldHadithNumber:focus-visible {
+  border-color: var(--emerald-700);
+  box-shadow: 0 0 0 3px rgba(28, 124, 85, 0.15);
+}
+
+.lookupRow {
+  display: grid;
+  gap: 10px;
+}
+
+.selector,
+.inputFieldHadithNumber {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(107, 127, 111, 0.33);
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--olive-text);
+  outline: none;
+}
+
+.selector {
+  text-align: left;
+}
+
+.primaryAction,
+.secondaryAction {
+  width: 100%;
+  min-height: 45px;
+  font-size: 0.96rem;
+  transition: transform 0.16s ease, box-shadow 0.2s ease;
+}
+
+.primaryAction {
+  color: #fff;
+  background: linear-gradient(130deg, var(--emerald-700), var(--emerald-900));
+}
+
+.secondaryAction {
+  color: #fff;
+  background: linear-gradient(130deg, #6f5a2f, #4c3b1f);
+}
+
+.primaryAction:active,
+.secondaryAction:active,
+.iconButton:active {
+  transform: translateY(1px);
+}
+
+@keyframes panelRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 700px) {
+  .adminShell {
     padding: 20px;
-    border: solid 1px white;
-    margin: 0 10px;
-}
+  }
 
-.header{
-    color: #FFF;
-    text-align: center;
-}
+  .entryList {
+    max-height: 50vh;
+  }
 
-.selector{
-    width: 200px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 100px;
-    background-color: #006;
-    color: #FFF;
-    border: 0;
-    text-align: center;
-}
-
-.announcements button{
-    height: min-content;
-    width: auto;
-    padding: 10px;
-    border-radius: 100%;
-}
-
-.announcementsContainer{
-    display: flex;
-    flex-direction: column;
+  .lookupRow {
+    grid-template-columns: 1.4fr 1fr auto;
     align-items: center;
-    width: 100%;
-    gap: 20px;
-    padding-top: 60px;
-    font-size: 20px;
-    height: 110vh;
+  }
 
-}
-
-.announcementsContainer>div:first-child, .header{
-    border: 4px solid white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,.2);
-    background-color: #006;
-    color: #FFF;
-}
-
-form textarea{
-    width: 90vw;
-    height: 100px;
-
-}
-
-form{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-button{
-    border: 0;
-    border-radius: 15px;
-    padding: 15px;
-    background-color: #006;
-    transition: background-color 0.3s ease;
-    color: white;
-    display: flex;
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: #CDAC2F;
-    border-bottom: 0px !important;
-}
-
-form button{
-    width: auto;
-    height: min-content;
-}
-
-.inputFieldHadithNumber{
-    font-size: 20px;
-    width: 150px;
+  .secondaryAction {
+    width: max-content;
+    padding: 0 16px;
+  }
 }

@@ -1,120 +1,297 @@
-body{
-  background: url('assets/images/bg4.png'); 
-  background-color: #007FFF;
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;700&display=swap');
+
+:root {
+  --emerald-900: #0f5b3d;
+  --emerald-700: #1c7c55;
+  --emerald-600: #2a8a61;
+  --sand-50: #fcfaf4;
+  --sand-100: #f6f0e2;
+  --sand-200: #e8dcc4;
+  --line-soft: #b6a890;
+  --olive-text: #1a3a2c;
+  --muted-text: #4f685d;
+  --gold-accent: #b88a34;
+  --card-shadow: 0 14px 30px rgba(45, 63, 55, 0.15);
+  --radius-xl: 26px;
+  --radius-lg: 16px;
 }
 
-.container { 
-  background-color: transparent;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  color: var(--olive-text);
+  background-image:
+    linear-gradient(160deg, rgba(253, 250, 242, 0.92) 0%, rgba(246, 238, 220, 0.9) 100%),
+    url('assets/images/bg4.png');
+  background-size: cover, 420px;
+  background-repeat: no-repeat, repeat;
+  background-attachment: fixed, fixed;
+}
+
+.appFrame {
+  min-height: 100vh;
+  padding-bottom: 94px;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 16px 12px;
+}
+
+.page--home {
+  display: flex;
+  justify-content: center;
+}
+
+.homeShell {
+  width: min(700px, 100%);
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.homeTop {
+  display: grid;
+  gap: 4px;
+}
+
+.brandRow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
   align-items: center;
-  height: 120vh;
+}
+
+.brandRow--compact {
+  align-items: flex-start;
+}
+
+.brandLogo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 91, 61, 0.2);
+  padding: 4px;
+}
+
+.brandTextWrap {
+  min-width: 0;
+}
+
+.appChip {
+  margin: 0 0 2px;
+  width: fit-content;
+  padding: 5px 10px;
+  border: 1px solid rgba(15, 91, 61, 0.26);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  color: var(--emerald-900);
+  font-size: 0.76rem;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.homeTitle {
+  margin: 0;
+  font-family: 'Marcellus', serif;
+  font-size: clamp(1.65rem, 5vw, 2.3rem);
+  color: var(--emerald-900);
+  line-height: 1.08;
+}
+
+.panel {
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.86) 0%, rgba(250, 245, 233, 0.9) 100%);
+  border: 1px solid rgba(182, 168, 144, 0.55);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--card-shadow);
+}
+
+.panel--home {
+  padding: 18px 12px 18px;
 }
 
 .start {
-  font-family: 'Arabic', sans-serif;
-  font-size: 36px;
-  text-align: right;
-  margin-top: 15%;
-  color: white;
+  margin: 0 0 10px;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: clamp(1.7rem, 7.5vw, 2.45rem);
+  line-height: 1.1;
   text-align: center;
+  color: var(--emerald-900);
 }
 
 .prayerTitle {
-  color: white;
-  font-size: 25px;
-  margin-top: 30px;
   text-align: center;
+  color: var(--muted-text);
+  font-size: 0.94rem;
+  margin-bottom: 14px;
+}
+
+.prayerForm {
+  display: grid;
+  gap: 10px;
 }
 
 .prayerInput {
-  width: 300px;
-  color: #007FFF;
-  background-color: white;
-  height: 50px;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
-  font-size: 22px;
+  width: 100%;
+  border: 1px solid rgba(107, 127, 111, 0.35);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--olive-text);
+  min-height: 46px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
-.button {
-  background-color: #006;
-  border-radius: 5px;
-  padding: 10px 20px;
-  
-  width: 300px;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  display: flex;
-    justify-content: center;
-    margin: 20px auto;
+.prayerInput:focus-visible {
+  border-color: var(--emerald-700);
+  box-shadow: 0 0 0 3px rgba(28, 124, 85, 0.16);
 }
 
-.button2 {
-  background-color: #002FFF;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-top: 50px;
-  width: 200px;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
+.primaryButton,
+.secondaryButton,
+.primaryAction,
+.secondaryAction,
+.iconButton {
+  border: 0;
+  border-radius: 12px;
+  font-family: inherit;
+  font-weight: 700;
   cursor: pointer;
+}
+
+.primaryButton {
+  margin-top: 4px;
+  min-height: 47px;
+  background: linear-gradient(130deg, var(--emerald-700) 0%, var(--emerald-900) 100%);
+  color: #f6fbf8;
+  font-size: 0.98rem;
+  transition: transform 0.16s ease, box-shadow 0.22s ease;
+}
+
+.primaryButton:hover {
+  box-shadow: 0 10px 20px rgba(15, 91, 61, 0.24);
+}
+
+.primaryButton:active {
+  transform: translateY(1px);
+}
+
+.confirmationOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 45, 37, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  padding: 16px;
 }
 
 .confirmationContainer {
-  height: 300px;
-  width: 300px;
-  background-color: green;
-  position: absolute;
-  top: 25%;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
+  width: min(350px, 100%);
+  border-radius: 20px;
+  background: linear-gradient(150deg, #ffffff 0%, #f8f2e4 100%);
+  border: 1px solid rgba(182, 168, 144, 0.65);
+  box-shadow: 0 14px 30px rgba(35, 52, 45, 0.22);
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  padding: 26px 16px 18px;
 }
 
 .confirmationText {
-  color: white;
-  font-size: 36px;
+  color: var(--emerald-900);
+  font-size: 1.35rem;
+  font-family: 'Marcellus', serif;
 }
 
-.scrollContainer {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
+.secondaryButton {
+  min-height: 43px;
+  min-width: 120px;
+  color: #f8fbfa;
+  background: var(--emerald-900);
 }
 
-form{
-  display: flex;
-  flex-direction: column;
-}
-
-.tabs{
-  display: flex;  
-  justify-content: center;
-  position: fixed; 
+.mobileTabs {
+  position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
-  width: 100%; 
-  background-color: #007FFF;
-  border: 1px solid black; 
-  padding-top: 10px;
-  padding-bottom: 10px;
-
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(250, 245, 233, 0.95);
+  border-top: 1px solid rgba(182, 168, 144, 0.65);
+  backdrop-filter: blur(8px);
 }
 
-.tabs button{
-  height: 60px; 
-}
-
-a{
+.tabLink {
   text-decoration: none;
-  color: #000;
+  color: var(--emerald-900);
+  min-height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(28, 124, 85, 0.2);
+  display: grid;
+  place-items: center;
+  font-size: 0.84rem;
+  letter-spacing: 0.2px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: transform 0.18s ease, background 0.2s ease;
+}
+
+.tabLink--active {
+  color: #fff;
+  background: linear-gradient(130deg, var(--emerald-700), var(--emerald-900));
+  border-color: transparent;
+}
+
+.tabLink:active {
+  transform: translateY(1px);
+}
+
+@media (min-width: 760px) {
+  .page {
+    padding: 30px 18px 20px;
+  }
+
+  .panel--home {
+    padding: 22px 20px;
+  }
+
+  .prayerForm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .primaryButton {
+    grid-column: span 2;
+  }
+
+  .brandLogo {
+    width: 58px;
+    height: 58px;
+  }
+
+  .mobileTabs {
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(760px, 95vw);
+    border-radius: 16px 16px 0 0;
+  }
 }
