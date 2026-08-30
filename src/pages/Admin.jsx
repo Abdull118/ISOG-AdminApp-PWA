@@ -71,7 +71,7 @@ const Admin = () => {
               <h1 className="adminTitle">Announcements</h1>
             </div>
           </div>
-          <p className="adminSubtitle">Push short updates to the TV display feed.</p>
+          <p className="adminSubtitle">Push short updates.</p>
         </header>
 
         <section className="entryList" aria-label="Announcement list">
